@@ -31,6 +31,7 @@ message ClientInfoRequest {
     string title = 3;           // 标题
     string host = 4;            // 主机
     uint32 os = 5;              // 操作系统 0 windows 1 linux
+    string ip = 6;             // IP地址
 }
 
 message ClientInfoResponse {
