@@ -39,7 +39,8 @@ message ClientInfoResponse {
 }
 
 message ClientPortRequest {
-    uint32 port = 1;           // token
+    string clientId = 1;       // 客户端ID
+    uint32 port = 2;           // 端口号
 }
 
 service ClientHelper {
