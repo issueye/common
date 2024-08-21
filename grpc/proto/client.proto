@@ -1,0 +1,79 @@
+syntax = "proto3";
+package proto;
+option go_package = "./proto";
+
+// 空数据
+message Empty {}
+
+// 返回
+message VersionResponse {
+    string clientId = 1;       // 客户端ID
+    string version = 2;         // 版本号
+    string appName = 3;         // 程序名称
+    string gitHash = 4;         // git hash
+    string gitBranch = 5;       // git 分支
+    string buildTime = 6;       // 构建时间
+    string goos = 7;            // 操作系统
+    string goVersion = 8;       // go 版本
+}
+
+// 心跳
+message HeartbeatResponse {
+    string clientId = 1;       // 客户端ID
+    int64 timestamp = 2;        // 时间戳
+    float memory = 3;           // 内存使用情况
+    float cpu = 4;              // CPU使用情况
+}
+
+message ClientInfoRequest {
+    string clientId = 1;       // 客户端ID
+    string name = 2;            // 名称
+    string title = 3;           // 标题
+    string host = 4;            // 主机
+    uint32 os = 5;              // 操作系统 0 windows 1 linux
+}
+
+message ClientInfoResponse {
+    string token = 1;           // token
+}
+
+message ClientPortRequest {
+    uint32 port = 1;           // token
+}
+
+service ClientHelper {
+    // 检查
+    rpc CheckClient(ClientInfoRequest) returns (ClientInfoResponse);
+    // 客户端端口
+    rpc ClientPort(ClientPortRequest) returns (Empty);
+}
+
+message PrintVersionResponse {
+    string version = 1;         // 版本号
+}
+
+message PrintUpdateRequest {
+    bytes data = 1;     // 服务二进制数据
+}
+
+message PrintDataRequest {
+    string data = 1;    // 打印数据
+}
+
+// 客户端提供的grpc服务
+service ClientServiceHelper {
+    // 重启打印服务
+    rpc RestartPrint(Empty) returns (Empty);
+    // 打印文件
+    rpc Print(PrintDataRequest) returns (Empty);
+    // 更新打印服务
+    rpc PrintUpdate(stream PrintUpdateRequest) returns (Empty);
+    // 打印服务版本
+    rpc PrintVersion(Empty) returns (PrintVersionResponse);
+    // 更新打印服务配置文件
+    rpc PrintUpdateConfig(PrintDataRequest) returns (Empty);
+    // 心跳                
+    rpc Heartbeat(Empty) returns (HeartbeatResponse);
+    // 获取版本号
+    rpc Version(Empty) returns (VersionResponse);
+}
