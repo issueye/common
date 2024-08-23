@@ -4,7 +4,7 @@ import (
 	"errors"
 	"reflect"
 
-	"golang.corp.yxkj.com/guava/common/model"
+	"github.com/issueye/common/model"
 
 	"gorm.io/gorm"
 )

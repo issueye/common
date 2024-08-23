@@ -7,9 +7,9 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
-	"golang.corp.yxkj.com/guava/common/model"
-	"golang.corp.yxkj.com/guava/common/pkg/utils"
-	orange_validator "golang.corp.yxkj.com/guava/common/pkg/validator"
+	"github.com/issueye/common/model"
+	"github.com/issueye/common/pkg/utils"
+	orange_validator "github.com/issueye/common/pkg/validator"
 )
 
 type RCode int

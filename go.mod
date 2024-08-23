@@ -1,4 +1,4 @@
-module golang.corp.yxkj.com/guava/common
+module github.com/issueye/common
 
 go 1.21.6
 

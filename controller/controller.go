@@ -2,7 +2,7 @@ package controller
 
 import (
 	"github.com/gin-gonic/gin"
-	"golang.corp.yxkj.com/guava/common/model"
+	"github.com/issueye/common/model"
 )
 
 type Controller[T any] struct {

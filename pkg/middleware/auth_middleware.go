@@ -6,7 +6,7 @@ import (
 
 	jwt "github.com/appleboy/gin-jwt/v2"
 	"github.com/gin-gonic/gin"
-	"golang.corp.yxkj.com/guava/common/config"
+	"github.com/issueye/common/config"
 )
 
 var TokenHeadName = "Bearer" // Token 认证方式

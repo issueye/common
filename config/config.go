@@ -7,9 +7,9 @@ import (
 	"strconv"
 	"time"
 
-	"golang.corp.yxkj.com/guava/common/pkg/db"
-	"golang.corp.yxkj.com/guava/common/pkg/logger"
-	"golang.corp.yxkj.com/guava/common/pkg/utils"
+	"github.com/issueye/common/pkg/db"
+	"github.com/issueye/common/pkg/logger"
+	"github.com/issueye/common/pkg/utils"
 
 	"gorm.io/gorm"
 )

@@ -3,7 +3,7 @@ package model
 import (
 	"strconv"
 
-	"golang.corp.yxkj.com/guava/common/pkg/utils"
+	"github.com/issueye/common/pkg/utils"
 )
 
 // User

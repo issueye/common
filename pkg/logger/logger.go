@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	"golang.corp.yxkj.com/guava/common/pkg/utils"
+	"github.com/issueye/common/pkg/utils"
 
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
