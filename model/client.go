@@ -19,6 +19,7 @@ type ClientBase struct {
 	IP           string `label:"IP" gorm:"column:ip;type:nvarchar(200);comment:IP;" json:"ip"`                                           // IP
 	Host         string `label:"主机" gorm:"column:host;type:nvarchar(200);comment:主机;" json:"host"`                                       // 主机
 	OS           uint   `label:"操作系统" gorm:"column:os;type:int;comment:操作系统;" json:"os"`                                                 // 操作系统 0 windows 1 linux
+	Port         uint   `label:"端口" gorm:"column:port;type:int;comment:端口;" json:"port"`                                                 // 端口
 	State        uint   `label:"状态" gorm:"column:state;type:int;comment:状态;" json:"state"`                                               // 状态 0 停用 1 启用
 	Version      string `label:"版本" gorm:"column:version;type:nvarchar(200);comment:版本;" json:"version"`                                 // 版本
 	GitHash      string `label:"GitHash" gorm:"column:git_hash;type:nvarchar(200);comment:GitHash;" json:"git_hash"`                     // GitHash
@@ -32,7 +33,12 @@ func (mod *ClientBase) Copy(data *ClientBase) {
 	mod.IP = data.IP
 	mod.Host = data.Host
 	mod.OS = data.OS
+	mod.Port = data.Port
 	mod.State = data.State
+	mod.Version = data.Version
+	mod.GitHash = data.GitHash
+	mod.GoVersion = data.GoVersion
+	mod.PrintVersion = data.PrintVersion
 }
 
 // TableName
